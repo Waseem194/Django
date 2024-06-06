@@ -1,0 +1,20 @@
+{% extends "common.html" %}
+
+{% block title %}
+  All Chai APP
+{% endblock %}
+
+
+
+{% block content %}
+<h1>All chai for you</h1>
+<div class = "grid grid-cols-6 m-4 gap-5 bg-yellow-200"> 
+  {% for chai in chais %}
+  <div class="bg-blue-500 p-4 rounded">
+    <img class="rounded shadow-lg"  src="{{ chai.image.url }}" alt="{{ chai.name }}">
+    <h3 class="text-3xl font-bold">{{ chai.name }}</h3>
+    <p>{{ chai.description }}</p> 
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,20 +1,33 @@
-{% extends "common.html" %}
+{% extends "common.html" %} 
 
-{% block title %}
-  All Chai APP
-{% endblock %}
-
-
+{% block title %} All Chai APP {% endblock %} 
 
 {% block content %}
-<h1>All chai for you</h1>
-<div class = "grid grid-cols-6 m-4 gap-5 bg-yellow-200"> 
-  {% for chai in chais %}
-  <div class="bg-blue-500 p-4 rounded">
-    <img class="rounded shadow-lg"  src="{{ chai.image.url }}" alt="{{ chai.name }}">
-    <h3 class="text-3xl font-bold">{{ chai.name }}</h3>
-    <p>{{ chai.description }}</p> 
-  </div>
-  {% endfor %}
+
+<div class="grid grid-cols-3 shadow-lg bg-stone-700	text-decoration-color: #18181b text-4xl;
+">
+{% for chai in chais %}
+      <div class="card" style="width: 18rem">
+        <img
+          src="{{ chai.image.url }}"
+          class="card-img-top"
+          alt="{{ chai.name }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">All chai for you</h5>
+          <p class="card-text">{{chai.description}}</p>
+          <a href="{% url 'chai_detail' chai.id %}" >
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-[100%]">
+              
+            {{chai.name}} - {{chai.id}}
+            </button>
+            
+          </a> 
+        </div>
+      </div>
+      {% endfor %}
+   
+
 </div>
+
 {% endblock %}

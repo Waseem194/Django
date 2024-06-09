@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'chai',
     'tailwind',
+    'django_bootstrap5',
     'theme',
     'django_browser_reload',
 ]
